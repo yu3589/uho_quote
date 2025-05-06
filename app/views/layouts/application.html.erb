@@ -22,7 +22,9 @@
   </head>
 
   <body class="flex flex-col min-h-screen">
-    <%= yield %>
+    <main class="flex-grow bg-yellow-50">
+      <%= yield %>
+    </main>
     <%= render 'shared/footer' %>
   </body>
 </html>
