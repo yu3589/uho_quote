@@ -4,9 +4,17 @@ class QuotesController < ApplicationController
 
   def category; end
 
+  CATEGORY_NAMES = {
+    "uho_power" => "ウホパワー",
+    "healing" => "ウホヒーリング",
+    "love" => "ウホ愛",
+    "yell" => "ウホエール"
+  }
+
   def show
     category = params[:category]
     @category = params[:category]
+    @category = CATEGORY_NAMES[category] || "名言"
     @quote = @quotes[category]&.sample
   end
 

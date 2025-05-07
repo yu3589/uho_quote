@@ -1,11 +1,14 @@
-<div class="flex flex-col flex-grow items-center justify-center p-6">
-  <h1 class="text-7xl text-gray-500 font-bold mt-5 md:pt-5">ウホ名言</h1>
-
-  <div class="mt-28">
-    <%= image_tag 'gorilla.svg' %>
+<div class="flex flex-col flex-grow items-center justify-between h-full w-full p-6">
+  <div class="flex flex-col items-center">
+    <h1 class="text-7xl text-gray-500 font-bold py-11">ウホ名言</h1>
   </div>
 
-  <div class="pt-10 md:mt-28">
+  <div class="mt-28"></div>
+    <div>
+      <%= image_tag 'gorilla.svg' %>
+    </div>
+
+  <div class="mt-28">
     <%= link_to "カテゴリを選ぶ", categories_path, class: "ring-2 ring-black
       rounded-md bg-yellow-500 px-5 py-5 text-black md:hover:bg-amber-600"%>
   </div>
