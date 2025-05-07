@@ -5,7 +5,7 @@
     "esbuild": "^0.25.3"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+    "build": "node --max-old-space-size=4096 ./node_modules/.bin/esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
