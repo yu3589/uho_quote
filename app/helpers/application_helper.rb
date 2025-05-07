@@ -1,25 +1,25 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'ウホ名言',
-      title: 'ウホ名言',
+      site: "ウホ名言",
+      title: "ウホ名言",
       reverse: true,
-      charset: 'utf-8',
-      description: 'ゴリラの名言が見れるアプリです',
+      charset: "utf-8",
+      description: "ゴリラの名言が見れるアプリです",
       canonical: request.original_url,
       og: {
         site_name: :site,
         title: :title,
         description: :description,
-        type: 'website',
+        type: "website",
         url: request.original_url,
-        image: image_url('share.png'),
-        local: 'ja-JP'
+        image: image_url("share.png"),
+        local: "ja-JP"
       },
         twitter: {
-        card: 'summary_large_image',
-        site: '@',
-        image: image_url('share.png')
+        card: "summary_large_image",
+        site: "@",
+        image: image_url("share.png")
       }
     }
   end
