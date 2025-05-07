@@ -1,7 +1,11 @@
-<div class="p-4 md:p-6">
+<div class="p-4">
   <div class="text-gray-500 font-bold text-center">
-    <div class="text-3xl md:text-4xl">ウホパワーが欲しい</div>
-    <div class="text-4xl md:text-5xl md:my-2">あなたへ送る</div>
+    <div class="text-3xl md:text-4xl">
+      <span class="text-black"><%= @category %></span>が欲しい
+    </div>
+  </div>
+  <div class="text-gray-500 font-bold text-center">
+    <div class="text-4xl md:text-5xl">あなたへ送る</div>
     <div class="text-4xl md:text-5xl md:my-2">ウホ名言</div>
   </div>
 
@@ -14,16 +18,15 @@
       <%= @quote %>
     </div>
   </div>
-
   <div class="p-4">
     <div class="flex justify-center items-center pt-10">
-      <%= link_to root_path, class: "ring-2 ring-black
+      <%= link_to "https://twitter.com/share?url=#{category_quote_url(@category)}&text=ウホ名言で「#{@category}」をもらったよ！%0a%0a【#{@quote}】%0a%0ahttps://uho-quote.onrender.com%0a%0a&hashtags=ウホ名言", target: "_blank", class: "ring-2 ring-black
           rounded-md bg-yellow-400 px-3 py-3 md:px-5 md:py-5 text-black md:hover:bg-amber-600" do %>
         <%= image_tag 'x.svg', class: 'mx-auto' %>
         でシェア
         <% end %>
       </div>
-      <div class="flex justify-center items-center pt-5 md:pt-10">
+      <div class="flex justify-center items-center pt-10">
         <%= link_to "ホームに戻る", root_path, class: "ring-2 ring-black
             rounded-md bg-blue-400 px-3 py-3 md:px-5 md:py-5 text-black md:hover:bg-blue-500"%>
       </div>
