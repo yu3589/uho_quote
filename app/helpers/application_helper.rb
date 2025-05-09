@@ -13,12 +13,12 @@ module ApplicationHelper
         description: :description,
         type: "website",
         url: request.original_url,
-        image: "https://uho-quote.onrender.com/assets/ogp3.png",
+        image: image_url("ogp3.png"),
         locale: "ja-JP"
       },
         twitter: {
         card: "summary_large_image",
-        image: "https://uho-quote.onrender.com/assets/ogp3.png"
+        image: image_url("ogp3.png")
       }
     }
   end
