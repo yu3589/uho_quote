@@ -1,8 +1,6 @@
 <div class="p-4">
-  <div class="text-gray-500 font-bold text-center md:pt-5">
-    <div class="text-3xl md:text-4xl">
-      <span class="text-black"><%= @category %></span>が欲しい
-    </div>
+  <div class="text-gray-500 font-bold text-center md:pt-10">
+    <div class="text-3xl md:text-4xl"><%= @category %>が欲しい</div>
   </div>
   <div class="text-gray-500 font-bold text-center">
     <div class="text-4xl md:text-5xl">あなたへ送る</div>
@@ -20,7 +18,7 @@
   </div>
   <div class="p-4">
     <div class="flex justify-center items-center pt-10">
-      <%= link_to "https://twitter.com/share?url=#{root_url}&text=ウホ名言で「#{@category}」をもらったよ！%0a%0a【#{@quote}】%0a%0a&hashtags=ウホ名言", target: "_blank", class: "ring-2 ring-black
+      <%= link_to "https://twitter.com/share?url=#{CGI.escape(root_url)}&text=#{CGI.escape("ウホ名言で「#{@category}」をもらったよ！\n【#{@quote}】")}\n&hashtags=#{CGI.escape("ウホ名言")}", target: "_blank", class: "ring-2 ring-black
           rounded-md bg-yellow-400 px-3 py-3 md:px-5 md:py-5 text-black md:hover:bg-amber-600" do %>
         <%= image_tag 'x.svg', class: 'mx-auto' %>
         でシェア
