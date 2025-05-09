@@ -29,7 +29,7 @@
 本アプリで使用しているSVG画像は以下のサイトより利用しています。
 - ゴリラの画像：[SVGRepo - Gorilla](https://www.svgrepo.com/svg/289159/gorilla)
   - 出典：Twemoji
-  - ライセンス：CC0（著作権表示不要、商用利用可）
+  - ライセンス：CC0
 - 火のアイコン：[SVGRepo - Fire](https://www.svgrepo.com/svg/500378/fire)
   - 出典：Tienda Nube
   - ライセンス：MIT License
