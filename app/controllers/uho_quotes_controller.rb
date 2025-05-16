@@ -8,7 +8,7 @@ class UhoQuotesController < ApplicationController
 
   def show
     category = params[:category]
-    @category = I18n.t("uho_quotes.#{category}", default: t('uho_quotes.title'))
+    @category = I18n.t("uho_quotes.#{category}", default: t("uho_quotes.title"))
     @selected_uho_quote = @uho_quotes[category]&.sample
   end
 
