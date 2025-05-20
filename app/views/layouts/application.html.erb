@@ -20,12 +20,12 @@
     <link rel="icon" href="<%= asset_path 'icon.svg' %>" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body class="flex flex-col min-h-screen">
-    <main class="flex-grow bg-yellow-50 items-center justify-center">
+    <main class="flex-grow bg-uho-yellow items-center justify-center">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
