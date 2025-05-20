@@ -15,11 +15,10 @@ module.exports = {
       colors: {
         uho: {
           yellow: '#fff7d2',
-          red: '#c78686',
-          blue: '#819bce',
-          middle_blue: '#748dc0',
-          purple: '#a291be',
-          orange: '#d98d73',
+          red: '#e58e8e',
+          blue: '#96b6f7',
+          purple: '#b0ade9',
+          orange: '#f0b07c',
           green: '#bfbb32',
           light_gray: '#f0eded',
           middle_gray: '#cecccc',
