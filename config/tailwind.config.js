@@ -12,6 +12,15 @@ module.exports = {
       fontFamily: {
         sans: ['"Zen Antique"', 'serif'],
       },
+      colors: {
+        uho: {
+          yellow: '#f8f0cb',
+          red: '#a25d5d',
+          blue: '#5a78b5',
+          purple: '#8f7db0',
+          orange: '#ad7558',
+        },
+      },
     },
   },
   plugins: [
