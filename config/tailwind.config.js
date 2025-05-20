@@ -36,6 +36,29 @@ module.exports = {
           white: '#f9f9f9',
         },
       },
+      keyframes: {
+        yuraYura: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        guragura: { 
+          '0%': { transform: 'rotate(0deg)' },
+          '10%': { transform: 'rotate(-6deg)' },
+          '20%': { transform: 'rotate(6deg)' },
+          '30%': { transform: 'rotate(-6deg)' },
+          '40%': { transform: 'rotate(6deg)' },
+          '50%': { transform: 'rotate(-4deg)' },
+          '60%': { transform: 'rotate(4deg)' },
+          '70%': { transform: 'rotate(-2deg)' },
+          '80%': { transform: 'rotate(2deg)' },
+          '90%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+      },
+      animation: {
+        'yura-yura': 'yuraYura 0.8s ease-in-out infinite',
+        'guragura': 'guragura 1s ease-in-out',
+      },
     },
   },
   plugins: [

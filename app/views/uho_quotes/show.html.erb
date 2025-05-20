@@ -8,7 +8,7 @@
   </div>
 
   <div class="flex justify-center">
-    <%= image_tag 'gorilla_for_phone.svg' %>
+    <%= image_tag 'gorilla_for_phone.svg', class: 'w-24 h-24 md:hover:animate-guragura transition-transform' %>
   </div>
 
   <div class="pt-5 md:pt-10">
@@ -20,14 +20,14 @@
   <div class="p-4">
     <div class="flex justify-center items-center pt-10">
       <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{CGI.escape("ウホ名言で「#{@category}」をもらったよ！\n【#{@selected_uho_quote}】")}\n&hashtags=#{CGI.escape("ウホ名言")}", target: "_blank", class: "ring-2 ring-black
-          rounded-md bg-uho-dark_yellow px-3 py-3 md:px-5 md:py-5 text-black md:hover:bg-uho-dark_yellow_hover" do %>
+          rounded-md bg-uho-dark_yellow px-3 py-3 md:px-5 md:py-5 text-black" do %>
         <%= image_tag 'x.svg', class: 'mx-auto' %>
         でシェア
         <% end %>
       </div>
       <div class="flex justify-center items-center pt-10">
         <%= link_to "ホームに戻る", root_path, class: "ring-2 ring-black
-            rounded-md bg-uho-dark_blue px-3 py-3 md:px-5 md:py-5 text-black md:hover:bg-uho-dark_blue_hover"%>
+            rounded-md bg-uho-dark_blue px-3 py-3 md:px-5 md:py-5 text-black"%>
       </div>
    </div>
 </div>
