@@ -20,14 +20,14 @@
   <div class="p-4">
     <div class="flex justify-center items-center pt-10">
       <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{CGI.escape("ウホ名言で「#{@category}」をもらったよ！\n【#{@selected_uho_quote}】")}\n&hashtags=#{CGI.escape("ウホ名言")}", target: "_blank", class: "ring-2 ring-black
-          rounded-md bg-yellow-500 px-3 py-3 md:px-5 md:py-5 text-black" do %>
+          rounded-md bg-uho-dark_yellow px-3 py-3 md:px-5 md:py-5 text-black" do %>
         <%= image_tag 'x.svg', class: 'mx-auto' %>
         でシェア
         <% end %>
       </div>
       <div class="flex justify-center items-center pt-10">
         <%= link_to "ホームに戻る", root_path, class: "ring-2 ring-black
-            rounded-md bg-uho-green px-3 py-3 md:px-5 md:py-5 text-black"%>
+            rounded-md bg-uho-blue px-3 py-3 md:px-5 md:py-5 text-black"%>
       </div>
    </div>
 </div>
