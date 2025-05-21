@@ -25,7 +25,7 @@ module.exports = {
           blue: '#8eabe8',
           blue_hover: '#7c9ad8',
           dark_blue: '#7295df',
-          dark_blue_hover: '#7276df',
+          dark_blue_hover: '#7b7ff1',
           purple: '#c0aaf1',
           purple_hover: '#a48adf',
           orange: '#efa36f',
@@ -37,9 +37,10 @@ module.exports = {
         },
       },
       keyframes: {
-        yuraYura: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+        yurayura: {
+          '0%': { transform: 'rotate(0deg)' },
+          '50%': { transform: 'rotate(2deg)' },
+          '100%': { transform: 'rotate(0deg)' },
         },
         guragura: { 
           '0%': { transform: 'rotate(0deg)' },
@@ -56,8 +57,8 @@ module.exports = {
         },
       },
       animation: {
-        'yura-yura': 'yuraYura 0.8s ease-in-out infinite',
-        'guragura': 'guragura 1s ease-in-out',
+        'yurayura': 'yurayura 0.8s ease-in-out infinite',
+        'guragura': 'guragura 1s ease-in-out infinite',
       },
     },
   },
