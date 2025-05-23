@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center text-center md:h-[75vh] place-content-end">
+    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center text-center md:h-[75vh] place-content-end opacity-100 md:opacity-0 md:animate-fade-in">
       <%= link_to category_uho_quote_path("uho_power"), data: { turbo: false }, 
           class: "ring-2 ring-black w-80 rounded-3xl bg-uho-orange p-9 md:hover:bg-uho-orange_hover" do %>
         ウホパワーが欲しい
@@ -36,14 +36,14 @@
         ウホエールが欲しい
         <%= image_tag 'yell.svg', class: 'mx-auto hidden md:block' %>
       <% end %>
+    </div>
 
-      <!-- md時表示 -->
-      <div class="flex items-center justify-center">
-        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    今はどんな気分かな？
-          <div class="transition-transform duration-300 ease-in-out hover:rotate-6">
-            <%= image_tag 'gorilla.svg' %>
-          </div>
+    <!-- md時表示 -->
+    <div class="flex items-center justify-center text-center">
+      <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  今はどんな気分かな？
+        <div class="transition-transform duration-300 ease-in-out hover:rotate-6">
+          <%= image_tag 'gorilla.svg' %>
         </div>
       </div>
     </div>
