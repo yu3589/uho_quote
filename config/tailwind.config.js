@@ -17,7 +17,7 @@ module.exports = {
       },
       colors: {
         uho: {
-          yellow: '#fef8dc',
+          yellow: '#f6efce',
           middle_yellow: '#e6b422',
           dark_yellow: '#e7c535',
           red: '#ef9b9b',
