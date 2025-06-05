@@ -61,6 +61,9 @@ module.exports = {
         'guragura': 'guragura 1s ease-in-out infinite',
         'fade-in': 'fadeIn 0.8s ease-out forwards',
       },
+      screens: {
+        'ipad': {'max': '1024px'},
+      },
     },
   },
   plugins: [
