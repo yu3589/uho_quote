@@ -10,12 +10,13 @@
 </div>
 
 <div class="p-4 md:p-6">
-  <div class="text-uho-dark_gray font-bold text-center pt-5 md:p-10 2xl:p-16">
-    <h2 class="text-3xl md:text-4xl 2xl:text-5xl">
-      カテゴリを選んでね</h2>
-  </div>
+  <div class="flex-col flex-grow items-stretch justify-center w-full ipad:flex">
+    <div class="text-uho-dark_gray font-bold text-center p-6 md:p-10 2xl:p-20">
+      <h2 class="text-3xl md:text-4xl 2xl:text-5xl">
+        カテゴリを選んでね</h2>
+    </div>
     <!-- sm時表示 -->
-    <div class="block md:hidden">
+    <div class="block ipad:block md:hidden">
       <div class="flex items-center justify-center pt-5">
         <div>
           <%= image_tag 'gorilla_for_phone.svg' %>
@@ -29,22 +30,22 @@
     <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center text-center md:text-base 2xl:text-lg
                 md:pt-12 opacity-100 md:opacity-0 md:animate-fade-in">
       <%= link_to category_uho_quote_path("uho_power"), data: { turbo: false }, 
-          class: "ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-orange p-8 md:p-6 flex flex-col items-center gap-1" do %>
+          class: "ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-orange p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
           ウホパワーが欲しい
           <%= image_tag 'uho_power.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
       <% end %>
       <%= link_to category_uho_quote_path("uho_healing"), data: { turbo: false },
-          class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-blue p-8 md:p-6 flex flex-col items-center gap-1" do %>
+          class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-blue p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
         ウホヒーリングが欲しい
         <%= image_tag 'healing.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
       <% end %>
       <%= link_to category_uho_quote_path("uho_love"), data: { turbo: false },
-        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-red p-8 md:p-6 flex flex-col items-center gap-1" do %>
+        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-red p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
         ウホ愛に包まれたい
         <%= image_tag 'love.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
       <% end %>
       <%= link_to category_uho_quote_path("uho_yell"), data: { turbo: false },
-        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-purple p-8 md:p-6 flex flex-col items-center gap-1" do %>
+        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-purple p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
         ウホエールが欲しい
         <%= image_tag 'yell.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
       <% end %>
@@ -52,12 +53,13 @@
 
     <!-- md時表示 -->
     <div class="flex items-center justify-center text-center 2xl:text-xl">
-      <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div class="hidden md:block ipad:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   今はどんな気分かな？
         <div class="transition-transform duration-300 ease-in-out hover:rotate-6 pt-3">
           <%= image_tag 'gorilla.svg' %>
         </div>
       </div>
     </div>
+   </div>
   </div>
 </div>

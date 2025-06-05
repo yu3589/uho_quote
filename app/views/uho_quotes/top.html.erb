@@ -1,21 +1,19 @@
-<div class="p-6">
-  <div class="flex flex-col flex-grow min-h-screen items-center justify-center w-full">
-    <div class="flex flex-col items-center">
-      <h1 class="text-6xl md:text-7xl text-uho-dark_gray font-bold"><%= t('uho_quotes.title') %></h1>
-    </div>
+<div class="p-4 md:p-6">
+  <div class="flex flex-col flex-grow items-center w-full pt-10 2xl:pt-16">
+    <h1 class="text-6xl md:text-7xl text-uho-dark_gray font-bold"><%= t('uho_quotes.title') %></h1>
 
     <div class="opacity-100 md:opacity-0 md:animate-fade-in">
-      <div class="mt-28 md:animate-yurayura transition-transform md:hover:pause">
+      <div class="pt-32 md:pt-36 md:animate-yurayura transition-transform md:hover:pause">
         <div>
-          <%= image_tag 'gorilla.svg' %>
+         <%= image_tag 'gorilla.svg' %>
         </div>
       </div>
     </div>
 
-    <div class="mt-10 md:mt-28 pt-5">
+    <div class="pt-20 2xl:mt-32 pb-6">
       <div class="text-center">
         <%= link_to "カテゴリを選ぶ", categories_path,
-            class: "ring-2 ring-black rounded-md bg-uho-middle_yellow px-5 py-5 text-black"%>
+            class: "block ring-2 ring-black rounded-md bg-uho-middle_yellow px-5 py-5 text-black hover-button"%>
       </div>   
     </div>
   </div>
