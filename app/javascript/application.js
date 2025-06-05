@@ -14,7 +14,7 @@ document.addEventListener('turbo:load', () => {
     const isLandscape = window.innerWidth > window.innerHeight;
 
     if ( 
-      (!isMobile && (window.innerHeight < 680 || window.innerWidth < 1000 )) ||
+      (!isMobile && (window.innerHeight < 680 || window.innerWidth < 1025 )) ||
       (isMobile && isLandscape) // スマホで横向きなら警告
     ) {
       warning.classList.remove('hidden');
