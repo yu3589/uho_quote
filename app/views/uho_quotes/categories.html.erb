@@ -1,0 +1,74 @@
+<!-- 画面警告表示 -->
+<div id="screen-warning" class="fixed inset-0 bg-uho-middle_gray text-uho-dark_gray 
+         flex flex-col items-center justify-center text-center text-xl z-50 hidden">
+  <div class="text-center mb-3">  
+    画面を大きくしてみてね
+  </div>
+  <div>
+    <%= image_tag 'gorilla_for_phone.svg' %>
+  </div>
+</div>
+
+<div class="p-4 md:p-10 2xl:p-16">
+  <div class="flex-col flex-grow items-stretch justify-center w-full ipad:flex">
+    <div class="text-uho-dark_gray font-bold text-center p-4 md:p-14 2xl:p-20">
+      <h2 class="text-3xl md:text-4xl 2xl:text-5xl">
+        カテゴリを選んでね</h2>
+    </div>
+    <!-- sm時表示 -->
+    <div class="block ipad:block md:hidden">
+      <div class="flex items-center justify-center pt-5">
+        <div>
+          <%= image_tag 'gorilla_for_phone.svg' %>
+        </div>
+      </div>
+      <div class="text-center mb-3">
+        今はどんな気分かな？
+      </div>
+    </div>
+
+    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center 
+                text-center text-lg md:text-base 2xl:text-lg text-uho-dark_brown
+                md:pt-12 opacity-100 md:opacity-0 md:animate-fade-in">
+      <%= link_to category_uho_quote_path("uho_power"), data: { turbo: false }, 
+          class: "category-card bg-uho-orange hover-animation" do %>
+        <div class="category-content">
+          <%= image_tag 'uho_power.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホパワーが欲しい</span>
+        </div>  
+      <% end %>
+      <%= link_to category_uho_quote_path("uho_healing"), data: { turbo: false },
+          class:"category-card bg-uho-blue hover-animation" do %>
+        <div class="category-content">
+          <%= image_tag 'healing.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホヒーリングが欲しい</span>
+        </div>
+      <% end %>
+      <%= link_to category_uho_quote_path("uho_love"), data: { turbo: false },
+        class:"category-card bg-uho-red hover-animation" do %>
+        <div class="category-content">
+          <%= image_tag 'love.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホ愛に包まれたい</span>
+        </div>
+      <% end %>
+      <%= link_to category_uho_quote_path("uho_yell"), data: { turbo: false },
+        class:"category-card bg-uho-purple hover-animation" do %>
+        <div class="category-content">
+          <%= image_tag 'yell.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+           <span class="text-center">ウホエールが欲しい</span>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- md時表示 -->
+    <div class="flex items-center justify-center text-center 2xl:text-xl">
+      <div class="hidden md:block ipad:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  今はどんな気分かな？
+        <div class="transition-transform duration-300 ease-in-out hover:rotate-6 pt-3">
+          <%= image_tag 'gorilla.svg' %>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@ class UhoQuotesController < ApplicationController
 
   def top; end
 
-  def category; end
+  def categories; end
 
   def show
     category = params[:category]

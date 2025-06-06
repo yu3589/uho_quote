@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "uho_quotes#top"
-  get "categories", to: "uho_quotes#category", as: "categories"
+  get "categories", to: "uho_quotes#categories", as: "categories"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/categories/:category", to: "uho_quotes#show", as: :category_uho_quote
 
