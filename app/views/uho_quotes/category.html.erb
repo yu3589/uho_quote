@@ -11,7 +11,7 @@
 
 <div class="p-4 md:p-10 2xl:p-16">
   <div class="flex-col flex-grow items-stretch justify-center w-full ipad:flex">
-    <div class="text-uho-dark_gray font-bold text-center p-6 md:p-14 2xl:p-20">
+    <div class="text-uho-dark_gray font-bold text-center p-4 md:p-14 2xl:p-20">
       <h2 class="text-3xl md:text-4xl 2xl:text-5xl">
         カテゴリを選んでね</h2>
     </div>
@@ -27,27 +27,36 @@
       </div>
     </div>
 
-    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center text-center md:text-base 2xl:text-lg
+    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-14 justify-items-center 
+                text-center text-lg md:text-base 2xl:text-lg text-uho-dark_brown
                 md:pt-12 opacity-100 md:opacity-0 md:animate-fade-in">
       <%= link_to category_uho_quote_path("uho_power"), data: { turbo: false }, 
-          class: "ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-orange p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
-          ウホパワーが欲しい
-          <%= image_tag 'uho_power.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
+          class: "category-card bg-uho-orange hover-animation" do %>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-2 w-full md:flex md:flex-col md:items-center">
+          <%= image_tag 'uho_power.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホパワーが欲しい</span>
+        </div>  
       <% end %>
       <%= link_to category_uho_quote_path("uho_healing"), data: { turbo: false },
-          class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-blue p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
-        ウホヒーリングが欲しい
-        <%= image_tag 'healing.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
+          class:"category-card bg-uho-blue hover-animation" do %>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+          <%= image_tag 'healing.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホヒーリングが欲しい</span>
+        </div>
       <% end %>
       <%= link_to category_uho_quote_path("uho_love"), data: { turbo: false },
-        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-red p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
-        ウホ愛に包まれたい
-        <%= image_tag 'love.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
+        class:"category-card bg-uho-red hover-animation" do %>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+          <%= image_tag 'love.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+            <span class="text-center">ウホ愛に包まれたい</span>
+        </div>
       <% end %>
       <%= link_to category_uho_quote_path("uho_yell"), data: { turbo: false },
-        class:"ring-2 ring-black w-full max-w-[320px] rounded-3xl bg-uho-purple p-8 md:p-6 flex flex-col items-center gap-1 hover-button" do %>
-        ウホエールが欲しい
-        <%= image_tag 'yell.svg', class: 'mx-auto hidden md:block w-30 h-30' %>
+        class:"category-card bg-uho-purple hover-animation" do %>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+          <%= image_tag 'yell.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
+           <span class="text-center">ウホエールが欲しい</span>
+        </div>
       <% end %>
     </div>
 
