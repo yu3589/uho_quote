@@ -30,6 +30,8 @@ module.exports = {
           dark_gray: '#747272',
           white: '#f9f9f9',
           green: '#bfbb32',
+          brown: '#504949',
+          dark_brown: '#332e2e',
         },
       },
       keyframes: {
