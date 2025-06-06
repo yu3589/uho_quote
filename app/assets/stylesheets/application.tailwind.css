@@ -14,4 +14,7 @@
   .category-card{
     @apply ring-2 ring-uho-brown w-full max-w-[320px] rounded-3xl p-6 flex flex-col items-center gap-1;
   }
+  .category-content{
+    @apply grid grid-cols-[auto_1fr] items-center gap-2 w-full md:flex md:flex-col md:items-center;
+  }
 }
