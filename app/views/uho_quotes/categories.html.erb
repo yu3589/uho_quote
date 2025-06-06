@@ -32,28 +32,28 @@
                 md:pt-12 opacity-100 md:opacity-0 md:animate-fade-in">
       <%= link_to category_uho_quote_path("uho_power"), data: { turbo: false }, 
           class: "category-card bg-uho-orange hover-animation" do %>
-        <div class="grid grid-cols-[auto_1fr] items-center gap-2 w-full md:flex md:flex-col md:items-center">
+        <div class="category-content">
           <%= image_tag 'uho_power.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
             <span class="text-center">ウホパワーが欲しい</span>
         </div>  
       <% end %>
       <%= link_to category_uho_quote_path("uho_healing"), data: { turbo: false },
           class:"category-card bg-uho-blue hover-animation" do %>
-        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+        <div class="category-content">
           <%= image_tag 'healing.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
             <span class="text-center">ウホヒーリングが欲しい</span>
         </div>
       <% end %>
       <%= link_to category_uho_quote_path("uho_love"), data: { turbo: false },
         class:"category-card bg-uho-red hover-animation" do %>
-        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+        <div class="category-content">
           <%= image_tag 'love.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
             <span class="text-center">ウホ愛に包まれたい</span>
         </div>
       <% end %>
       <%= link_to category_uho_quote_path("uho_yell"), data: { turbo: false },
         class:"category-card bg-uho-purple hover-animation" do %>
-        <div class="grid grid-cols-[auto_1fr] items-center gap-1 w-full md:flex md:flex-col md:items-center">
+        <div class="category-content">
           <%= image_tag 'yell.svg', class: 'w-10 h-10 md:w-32 md:h-32' %>
            <span class="text-center">ウホエールが欲しい</span>
         </div>
