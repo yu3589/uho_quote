@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "categories", to: "uho_quotes#categories", as: "categories"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/categories/:category", to: "uho_quotes#show", as: :category_uho_quote
-
+  get "quote/:uuid", to: "uho_quotes#show", as: "quote"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

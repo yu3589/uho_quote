@@ -1,6 +1,6 @@
 <div class="p-3 md:p-10">
   <div class="flex flex-col flex-grow items-center justify-center w-full">
-    <div class="text-uho-dark_gray font-bold text-center pt-1 ipad:pt-10 md:pt-5 2xl:pt-20">
+    <div class="text-uho-dark_gray font-bold text-center ipad:pt-10 md:pt-5 2xl:pt-20">
       <div class="text-3xl md:text-4xl"><%= @category %>が欲しい</div>
     </div>
     <div class="text-uho-dark_gray font-bold text-center">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="flex justify-center">
-      <%= image_tag 'gorilla_for_phone.svg', class: 'w-24 h-24 md:hover:animate-guragura transition-transform' %>
+      <%= image_tag 'uho_for_phone.svg', class: 'w-24 h-24 md:hover:animate-guragura transition-transform' %>
     </div>
 
     <div class="pt-5 md:pt-10 2xl:pt-14 opacity-100 md:opacity-0 md:animate-fade-in">
@@ -19,17 +19,23 @@
     </div>
 
     <div class="p-4">
-      <div class="flex justify-center items-center pt-5 md:pt-10 2xl:pt-14">
-        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{CGI.escape("ウホ名言で「#{@category}」をもらったよ！\n【#{@selected_uho_quote}】")}\n&hashtags=#{CGI.escape("ウホ名言")}", target: "_blank", 
-             class: "ring-2 ring-uho-brown rounded-md bg-uho-dark_yellow px-3 py-3 md:px-5 md:py-5 text-black hover-animation" do %>
+      <div class="flex justify-center items-center pt-5 md:pt-5 2xl:pt-12 gap-5">
+        <%= link_to "https://twitter.com/intent/tweet?url=#{quote_url(uuid: @ogp_id)}&text=#{CGI.escape("ウホ名言で「#{@category}」をもらったよ！")}\n&hashtags=#{CGI.escape("ウホ名言")}", target: "_blank", 
+             class: "ring-2 ring-uho-brown rounded-full bg-uho-dark_yellow px-5 py-5 text-black hover-animation" do %>
           <%= image_tag 'x.svg', class: 'mx-auto' %>
             でシェア
           <% end %>
+          <div class="flex justify-center items-center mt-12">
+            <%= link_to root_path, class: "ring-2 ring-uho-brown rounded-full bg-uho-blue px-4 py-4 md:px-5 md:py-5 hover-animation" do%>
+              <%= image_tag 'house.svg', class: 'mx-auto' %>
+            <% end %>
+          </div>
         </div>
-        <div class="flex justify-center items-center pt-8 md:pt-10">
-          <%= link_to "ホームに戻る", root_path, 
-              class: "ring-2 ring-uho-brown rounded-md bg-uho-green px-3 py-3 md:px-5 md:py-5 text-black hover-animation"%>
+        <div class="flex justify-center items-center pt-2 md:pt-4 2xl:pt-6 gap-5 text-center">
+          <%= link_to raw("カテゴリを<br>選び直す"), categories_path,
+              class: "ring-2 ring-uho-brown rounded-full bg-uho-green px-5 py-5 text-black hover-animation"%>
         </div>
      </div>
+    </div>
   </div>
 </div>
