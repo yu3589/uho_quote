@@ -5,7 +5,7 @@
     画面を大きくしてみてね
   </div>
   <div>
-    <%= image_tag 'gorilla_for_phone.svg' %>
+    <%= image_tag 'uho_for_phone.svg' %>
   </div>
 </div>
 
@@ -13,13 +13,13 @@
   <div class="flex-col flex-grow items-stretch justify-center w-full ipad:flex">
     <div class="text-uho-dark_gray font-bold text-center p-4 md:p-14 2xl:p-20">
       <h2 class="text-3xl md:text-4xl 2xl:text-5xl">
-        カテゴリを選んでね</h2>
+        <%= @category_title %>を選んでね</h2>
     </div>
     <!-- sm時表示 -->
     <div class="block ipad:block md:hidden">
       <div class="flex items-center justify-center">
         <div>
-          <%= image_tag 'gorilla_for_phone.svg' %>
+          <%= image_tag 'uho_for_phone.svg' %>
         </div>
       </div>
       <div class="text-center mb-3">
@@ -64,8 +64,8 @@
     <div class="flex items-center justify-center text-center 2xl:text-xl">
       <div class="hidden md:block ipad:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                   今はどんな気分かな？
-        <div class="transition-transform duration-300 ease-in-out hover:rotate-6 pt-3">
-          <%= image_tag 'gorilla.svg' %>
+        <div class="transition-transform duration-300 ease-in-out hover:rotate-6 pt-3 ">
+          <%= image_tag 'uho.svg' %>
         </div>
       </div>
     </div>
