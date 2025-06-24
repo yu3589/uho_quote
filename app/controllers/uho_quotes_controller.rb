@@ -11,12 +11,10 @@ class UhoQuotesController < ApplicationController
   end
 
   def show
-    category = params[:category]
-    @category = I18n.t("uho_quotes.#{category}", default: t("uho_quotes.title"))
-
     if params[:uuid].present?
       load_quote_from_cache(params[:uuid])
     else
+      category = params[:category]
       generate_new_quote(category)
     end
 
@@ -27,11 +25,15 @@ class UhoQuotesController < ApplicationController
   private
 
   def load_quote_from_cache(uuid)
-    @selected_uho_quote = Rails.cache.read(uuid)
-    unless @selected_uho_quote
+    cached_data = Rails.cache.read(uuid)
+    unless cached_data
       redirect_to root_path
       return
     end
+
+    @selected_uho_quote = cached_data[:quote]
+    @category_key = cached_data[:category]
+    @category = I18n.exists?("uho_quotes.#{@category_key}") ? I18n.t("uho_quotes.#{@category_key}") : t("uho_quotes.title")
     @ogp_id = uuid
   end
 
@@ -47,8 +49,11 @@ class UhoQuotesController < ApplicationController
       OgpCreator.build(@selected_uho_quote, category).write(ogp_path)
     end
 
+
     # 名言をキャッシュに保存（3日間）
-    Rails.cache.write(@ogp_id, @selected_uho_quote, expires_in: 3.days)
+    Rails.cache.write(@ogp_id, { quote: @selected_uho_quote, category: category }, expires_in: 3.days)
+    @category_key = category
+    @category = I18n.exists?("uho_quotes.#{@category_key}") ? I18n.t("uho_quotes.#{@category_key}") : t("uho_quotes.title")
   end
 
   def set_uho_quotes
