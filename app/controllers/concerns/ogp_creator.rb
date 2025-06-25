@@ -4,7 +4,7 @@ class OgpCreator
   GRAVITY = "center"
   TEXT_POSITION = "0,0"
   FONT = "./app/assets/fonts/Zen_Antique/ZenAntique-Regular.ttf"
-  FONT_SIZE = 65
+  FONT_SIZE = 55
   INDENTION_COUNT = 16
   ROW_LIMIT = 8
 
