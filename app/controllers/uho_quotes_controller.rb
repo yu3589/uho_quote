@@ -39,21 +39,8 @@ class UhoQuotesController < ApplicationController
 
   def generate_new_quote(category)
     @selected_uho_quote = params[:quote] || @uho_quotes[category]&.sample
-    @ogp_id = SecureRandom.uuid
-
-    ogp_dir = Rails.root.join("public", "ogps")
-    FileUtils.mkdir_p(ogp_dir) unless Dir.exist?(ogp_dir)
-    ogp_path = ogp_dir.join("#{@ogp_id}.png")
-
-    unless File.exist?(ogp_path)
-      OgpCreator.build(@selected_uho_quote, category).write(ogp_path)
-    end
-
-
-    # 名言をキャッシュに保存（3日間）
-    Rails.cache.write(@ogp_id, { quote: @selected_uho_quote, category: category }, expires_in: 3.days)
+    @category = I18n.t("uho_quotes.#{category}", default: t("uho_quotes.title"))
     @category_key = category
-    @category = I18n.exists?("uho_quotes.#{@category_key}") ? I18n.t("uho_quotes.#{@category_key}") : t("uho_quotes.title")
   end
 
   def set_uho_quotes
