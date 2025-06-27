@@ -1,14 +1,13 @@
 class UhoQuotesController < ApplicationController
   require "yaml"
   before_action :set_uho_quotes
+  before_action :set_category_title, only: [ :categories, :show ]
 
   def top
     clean_old_ogps if rand < 0.05 # 5% の確率で掃除（負荷対策）
   end
 
-  def categories
-    @category_title = @uho_quotes["category_title"]&.sample
-  end
+  def categories; end
 
   def show
     if params[:uuid].present?
@@ -37,6 +36,10 @@ class UhoQuotesController < ApplicationController
     @ogp_id = uuid
   end
 
+  def set_category_title
+    @category_title = @uho_quotes["category_title"]&.sample
+  end
+
   def generate_new_quote(category)
     @selected_uho_quote = params[:quote] || @uho_quotes[category]&.sample
     @category = I18n.t("uho_quotes.#{category}", default: t("uho_quotes.title"))
@@ -44,15 +47,18 @@ class UhoQuotesController < ApplicationController
     @ogp_id = SecureRandom.uuid
 
     ogp_dir = Rails.root.join("public", "ogps")
-    FileUtils.mkdir_p(ogp_dir) unless Dir.exist?(ogp_dir)
+
+    # mkdir_p でpublic/ogps フォルダの存在確認＋再帰作成
+    FileUtils.mkdir_p(ogp_dir)
     ogp_path = ogp_dir.join("#{@ogp_id}.png")
 
+    # 指定されたUUIDに対応する.pngファイルがあるか確認
     unless File.exist?(ogp_path)
       OgpCreator.build(@selected_uho_quote, category).write(ogp_path)
     end
 
-    # 名言をキャッシュに保存
-    Rails.cache.write(@ogp_id, { quote: @selected_uho_quote, category: category }, expires_in: 3.days)
+    # UUIDと名言データをキャッシュに保存
+    Rails.cache.write(@ogp_id, { quote: @selected_uho_quote, category: category }, expires_in: 1.days)
     @category_key = category
     @category = I18n.exists?("uho_quotes.#{@category_key}") ? I18n.t("uho_quotes.#{@category_key}") : t("uho_quotes.title")
   end
@@ -83,7 +89,7 @@ class UhoQuotesController < ApplicationController
     return unless Dir.exist?(ogp_dir)
 
     Dir.glob("#{ogp_dir}/*.png").each do |file|
-      if File.mtime(file) < 3.days.ago
+      if File.mtime(file) < 1.days.ago
         begin
           Rails.logger.info "削除: #{file}" # 削除処理をログに出力
           File.delete(file)
