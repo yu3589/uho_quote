@@ -24,21 +24,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <header>
-    <% if user_signed_in? %>
-      <li>
-        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-  </header>
-
+  <%= render 'shared/header' %>
   <body class="flex flex-col min-h-screen">
     <main class="flex-grow bg-uho-yellow">
       <p class="notice"><%= notice %></p>

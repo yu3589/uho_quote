@@ -1,26 +1,44 @@
-<h2>ログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="flex items-center justify-center min-h-screen text-uho-dark_gray px-4 py-4">
+  <div class="w-full max-w-md p-2 bg-uho-light_gray rounded-3xl ring-1 ring-uho-middle_gray md:px-10 md:py-4">
+    <div class="flex items-center justify-center gap-2 mb-6 pt-2">
+      <div class="w-10 h-10">
+        <%= image_tag 'uho_for_phone.svg' %>
+      </div>
+      <h2 class="text-2xl font-bold text-center">ログイン</h2>
+      <div class="w-10 h-10">
+        <%= image_tag 'uho_for_phone.svg' %>
+      </div>
     </div>
-  <% end %>
+    <h2 class="text-2xl font-bold text-center text-uho-red">※ 只今準備中です</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-control mb-4 p-2">
+        <%= f.label :email, class: "label label-text mb-1" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-bordered w-full h-10 rounded-xl px-4 py-2 ring-1 ring-uho-middle_gray" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+      <div class="form-control mb-4 p-2">
+        <%= f.label :password, class: "label label-text mb-1" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "input input-bordered w-full h-10 rounded-xl px-4 py-2 ring-1 ring-uho-middle_gray" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-control mb-4 p-2">
+          <label class="inline-flex items-center">
+            <%= f.check_box :remember_me, class: "w-5 h-5 text-uho-blue accent-uho-blue mr-2" %>
+            <%= f.label :remember_me, class: "text-sm" %>
+          </label>
+        </div>
+      <% end %>
+
+      <div class="form-control flex justify-center">
+        <%= f.submit "ログイン", class: "btn btn-sm bg-uho-blue p-2 md:p-3 2xl:p-4 rounded-xl text-gray-700" %>
+      </div>
+    <% end %>
+
+    <div class="mt-4 text-center pb-2">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+
