@@ -24,8 +24,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
+  <%= render 'shared/header' %>
   <body class="flex flex-col min-h-screen">
     <main class="flex-grow bg-uho-yellow">
+      <% if notice.present? %>
+        <%= render 'shared/notice', notice: notice %>
+      <% end %>
+      <% if alert.present? %>
+        <%= render 'shared/alert', alert: alert %>
+      <% end %>
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
