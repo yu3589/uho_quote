@@ -1,0 +1,12 @@
+<div class="flex justify-end items-center bg-uho-yellow text-gray-700 p-2">
+  <% if user_signed_in? %>
+    <div class="flex gap-3">
+      <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-sm bg-uho-orange p-2 md:p-3 2xl:p-4 rounded-full ring-1 ring-uho-brown" %>
+    </div>
+  <% else %>
+    <div class="flex gap-2 md:gap-3">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-sm bg-uho-blue p-2 md:p-3 2xl:p-4 rounded-full ring-1 ring-uho-brown" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-sm bg-uho-green p-2 md:p-3 2xl:p-4 rounded-full ring-1 ring-uho-brown" %>
+    </div>
+  <% end %>
+</div>
