@@ -10,6 +10,17 @@
       </div>
     </div>
     <h2 class="text-2xl font-bold text-center text-uho-red">※ 只今準備中です</h2>
+
+    <div class="mt-4 text-center pb-2">
+      <%= render "devise/shared/links" %>
+    </div>
+
+    <div class="flex items-center my-6">
+      <div class="flex-grow border-t border-gray-300"></div>
+      <span class="mx-4 text-gray-500 text-sm">または</span>
+      <div class="flex-grow border-t border-gray-300"></div>
+    </div>
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-control mb-4 p-2">
         <%= f.label :email, class: "label label-text mb-1" %>
@@ -34,11 +45,5 @@
         <%= f.submit "ログイン", class: "btn btn-sm bg-uho-blue p-2 md:p-3 2xl:p-4 rounded-xl text-gray-700" %>
       </div>
     <% end %>
-
-    <div class="mt-4 text-center pb-2">
-      <%= render "devise/shared/links" %>
-    </div>
   </div>
 </div>
-
-
