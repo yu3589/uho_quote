@@ -4,6 +4,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [ :create ]
   before_action :configure_account_update_params, only: [ :update ]
 
+  # 新規ユーザー登録時に自動でuidをセットする
+  def build_resource(hash = {})
+    hash[:uid] = User.create_unique_string
+    super
+  end
+
+  # ユーザー情報の更新処理
+  def update_resource(resource, params)
+    return super if params["password"].present?
+    # パスワードが空(変更なし)なら、パスワード入力無しでも更新できるようにする
+    resource.update_without_password(params.except("current_password"))
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
